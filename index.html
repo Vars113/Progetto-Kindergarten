@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In fase di costruzione</title>
+    <title>Buone Feste</title>
 
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             overflow: hidden;
+            font-family: Arial, sans-serif;
             background-color: #f3f4f6;
         }
 
+        /* Scritta Buone Feste */
         h1 {
-            font-family: Arial, sans-serif;
-    background: transparent; /* Rimuove lo sfondo */
-    color: #333;
-    font-size: 2rem;
-    padding: 20px;
-    border-radius: 10px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Opzionale: per un effetto di leggibilità */
-}
-        
+            font-size: 3rem;
+            text-align: center;
+            color: #B22222;
+            background: transparent;
+            padding: 20px;
+        }
+
+        /* Background con albero natalizio */
         .background {
             position: absolute;
             top: 50%;
@@ -33,24 +29,25 @@
             transform: translate(-50%, -50%);
             width: 30%;
             max-height: 60%;
-            opacity: 1;
+            opacity: 0.5;
             background: url('albero-marzapane.png') no-repeat center/contain;
         }
 
-        /* Animazione GIF */
-        .moving-reindeer {
+        /* Slitta animata */
+        .moving-sleigh {
             position: absolute;
-            top: 10%;
+            bottom: 50px;
+            left: -10%;
             height: 150px;
-            animation: moveReindeer 5s linear infinite alternate;
+            animation: moveSleigh 5s linear infinite alternate;
         }
 
-        @keyframes moveReindeer {
+        @keyframes moveSleigh {
             from {
-                transform: translateX(100vw); /* Inizia fuori a destra */
+                transform: translateX(0);
             }
             to {
-                transform: translateX(-100vw); /* Esce fuori a sinistra */
+                transform: translateX(100vw);
             }
         }
     </style>
@@ -58,14 +55,15 @@
 
 <body>
 
-    <!-- Background dell'albero -->
+    <!-- Scritta Buone Feste -->
+    <h1>Sito in costruzione. Buone Feste a tutti!</h1>
+
+    <!-- Sfondo con albero natalizio -->
     <div class="background"></div>
 
-    <!-- GIF della renna animata -->
-    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="moving-reindeer">
-    
-    <!-- Testo della notifica -->
-    <h1>Sito in fase di costruzione. Buone feste!</h1>
+    <!-- Slitta di Babbo Natale -->
+    <img src="sleigh-of-santa.png" alt="Slitta di Babbo Natale" class="moving-sleigh">
 
 </body>
+
 </html>
