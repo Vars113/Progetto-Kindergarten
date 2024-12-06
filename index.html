@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buone Feste</title>
-
+    <title>In fase di costruzione</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f3f4f6;
+            text-align: center;
         }
-
-        /* Background con albero natalizio */
-        .background {
-            width: 30%;
-            max-height: 50%;
-            background: url('albero-marzapane.png') no-repeat center/contain;
+        .image-container img {
+            max-width: 50%; /* Limita la larghezza al 50% dello schermo */
+            height: auto; /* Mantiene le proporzioni dell'immagine */
+            opacity: 1; /* Aggiunge trasparenza */
         }
-
-        /* Scritta centrata */
         h1 {
-            font-size: 3rem;
-            color: #B22222;
-            margin-top: 20px;
+            color: #333;
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
         }
     </style>
 </head>
-
 <body>
-
-    <!-- Sfondo con albero natalizio -->
-    <div class="background"></div>
-
-    <!-- Scritta Sito in costruzione -->
-    <h1>Sito in costruzione.<br>Buone feste!</h1>
-
+    <div class="image-container">
+        <img src="albero-marzapane.png" alt="Albero di Natale di marzapane">
+    </div>
+    <h1>Sito in fase di costruzione. Buone feste!</h1>
 </body>
-
 </html>
