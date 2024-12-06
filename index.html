@@ -3,64 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In fase di costruzione</title>
+    <title>Buone Feste</title>
 
     <style>
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            overflow: hidden;
             font-family: Arial, sans-serif;
             background-color: #f3f4f6;
         }
-        
-        h1 {
-            color: #333;
-            font-size: 2rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
 
+        /* Background con albero natalizio */
         .background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 30%;
-            max-height: 60%;
-            opacity: 0.5;
+            max-height: 50%;
             background: url('albero-marzapane.png') no-repeat center/contain;
         }
 
-        /* Posizione e animazione della renna */
-        .reindeer {
-            position: absolute;
-            top: 20%;
-            left: -10%;
-            width: 150px;
-            height: auto;
-            animation: moveReindeer 5s linear infinite alternate;
-        }
-
-        @keyframes moveReindeer {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(100vw);
-            }
+        /* Scritta centrata */
+        h1 {
+            font-size: 3rem;
+            color: #B22222;
+            margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
 
+    <!-- Sfondo con albero natalizio -->
     <div class="background"></div>
-    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="reindeer">
-    <h1>Sito in fase di costruzione. Torna presto!</h1>
+
+    <!-- Scritta Sito in costruzione -->
+    <h1>Sito in costruzione.<br>Buone feste!</h1>
 
 </body>
+
 </html>
