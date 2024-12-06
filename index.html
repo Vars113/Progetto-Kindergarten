@@ -3,69 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buone Feste</title>
+    <title>In fase di costruzione</title>
 
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow: hidden;
-            font-family: Arial, sans-serif;
             background-color: #f3f4f6;
         }
 
-        /* Scritta Sito in costruzione */
         h1 {
-            font-size: 3rem;
-            text-align: center;
-            color: #B22222;
-            background: transparent;
+            font-family: Arial;
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
+            border-radius: 10px;
         }
 
-        /* Background con albero natalizio */
         .background {
             position: absolute;
-            top: 10%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 30%;
-            max-height: 50%;
-            opacity: 0.8;
+            max-height: 60%;
+            opacity: 0.5;
             background: url('albero-marzapane.png') no-repeat center/contain;
         }
 
-        /* Slitta animata */
-        .moving-sleigh {
-            position: absolute;
-            bottom: 50px;
-            left: -15%;
-            height: 150px;
-            animation: moveSleigh 5s linear infinite alternate;
-        }
-
-        /* Renna animata */
+        /* Animazione GIF */
         .moving-reindeer {
             position: absolute;
-            top: 20%;
-            left: -20%;
-            height: 100px;
-            animation: moveReindeer 4s linear infinite alternate;
-        }
-
-        @keyframes moveSleigh {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(100vw);
-            }
+            top: 10%;
+            height: 150px;
+            animation: moveReindeer 5s linear infinite alternate;
         }
 
         @keyframes moveReindeer {
             from {
-                transform: translateX(0);
+                transform: translateX(100vw); /* Inizia fuori a destra */
             }
             to {
-                transform: translateX(100vw);
+                transform: translateX(-100vw); /* Esce fuori a sinistra */
             }
         }
     </style>
@@ -73,21 +55,14 @@
 
 <body>
 
-    <!-- Sfondo con albero natalizio -->
+    <!-- Background dell'albero -->
     <div class="background"></div>
 
-    <!-- Scritta Sito in costruzione -->
-    <h1>
-        Sito in costruzione.<br>
-        Buone feste!
-    </h1>
-
-    <!-- Slitta animata -->
-    <img src="sleigh-of-santa.png" alt="Slitta" class="moving-sleigh">
-
-    <!-- Renna animata -->
-    <img src="gif-renna-destra-sinistra.gif" alt="Renna" class="moving-reindeer">
+    <!-- GIF della renna animata -->
+    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="moving-reindeer">
     
-</body>
+    <!-- Testo della notifica -->
+    <h1>Sito in fase di costruzione. Torna presto!</h1>
 
+</body>
 </html>
