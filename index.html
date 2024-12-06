@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In fase di costruzione</title>
+
     <style>
         body {
             display: flex;
@@ -11,30 +12,60 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            overflow: hidden;
             background-color: #f3f4f6;
-            text-align: center;
         }
-        .image-container img {
-            max-width: 60%; /* Limita la larghezza al 50% dello schermo */
-            height: auto; /* Mantiene le proporzioni dell'immagine */
-            opacity: 1; /* Aggiunge trasparenza */
-        }
+
         h1 {
-            color: #333;
-            font-size: 2rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 1;
+            font-family: Arial, sans-serif;
+    background: transparent; /* Rimuove lo sfondo */
+    color: #333;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Opzionale: per un effetto di leggibilità */
+}
+        
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%;
+            max-height: 60%;
+            opacity: 0.5;
+            background: url('albero-marzapane.png') no-repeat center/contain;
+        }
+
+        /* Animazione GIF */
+        .moving-reindeer {
+            position: absolute;
+            top: 10%;
+            height: 150px;
+            animation: moveReindeer 5s linear infinite alternate;
+        }
+
+        @keyframes moveReindeer {
+            from {
+                transform: translateX(100vw); /* Inizia fuori a destra */
+            }
+            to {
+                transform: translateX(-100vw); /* Esce fuori a sinistra */
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="image-container">
-        <img src="albero-marzapane.png" alt="Albero di Natale di marzapane">
-    </div>
+
+    <!-- Background dell'albero -->
+    <div class="background"></div>
+
+    <!-- GIF della renna animata -->
+    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="moving-reindeer">
+    
+    <!-- Testo della notifica -->
     <h1>Sito in fase di costruzione. Buone feste!</h1>
+
 </body>
 </html>
