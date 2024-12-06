@@ -12,7 +12,7 @@
             background-color: #f3f4f6;
         }
 
-        /* Scritta Buone Feste */
+        /* Scritta Sito in costruzione */
         h1 {
             font-size: 3rem;
             text-align: center;
@@ -24,12 +24,12 @@
         /* Background con albero natalizio */
         .background {
             position: absolute;
-            top: 5%;
+            top: 10%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 30%;
             max-height: 50%;
-            opacity: 1;
+            opacity: 0.8;
             background: url('albero-marzapane.png') no-repeat center/contain;
         }
 
@@ -42,7 +42,25 @@
             animation: moveSleigh 5s linear infinite alternate;
         }
 
+        /* Renna animata */
+        .moving-reindeer {
+            position: absolute;
+            top: 20%;
+            left: -20%;
+            height: 100px;
+            animation: moveReindeer 4s linear infinite alternate;
+        }
+
         @keyframes moveSleigh {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100vw);
+            }
+        }
+
+        @keyframes moveReindeer {
             from {
                 transform: translateX(0);
             }
@@ -58,11 +76,17 @@
     <!-- Sfondo con albero natalizio -->
     <div class="background"></div>
 
-    <!-- Scritta Buone Feste -->
-    <h1>Sito in costruzione. Buone Feste a tutti!</h1>
+    <!-- Scritta Sito in costruzione -->
+    <h1>
+        Sito in costruzione.<br>
+        Buone feste!
+    </h1>
 
-    <!-- Slitta di Babbo Natale -->
+    <!-- Slitta animata -->
     <img src="sleigh-of-santa.png" alt="Slitta di Babbo Natale" class="moving-sleigh">
+
+    <!-- Renna animata -->
+    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="moving-reindeer">
     
 </body>
 
