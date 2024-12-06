@@ -13,11 +13,13 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            font-family: Arial, sans-serif;
             background-color: #f3f4f6;
         }
-
+        
         h1 {
-            font-family: Arial;
+            color: #333;
+            font-size: 2rem;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
@@ -34,34 +36,30 @@
             background: url('albero-marzapane.png') no-repeat center/contain;
         }
 
-        /* Animazione GIF */
-        .moving-reindeer {
+        /* Posizione e animazione della renna */
+        .reindeer {
             position: absolute;
-            top: 10%;
-            height: 150px;
+            top: 20%;
+            left: -10%;
+            width: 150px;
+            height: auto;
             animation: moveReindeer 5s linear infinite alternate;
         }
 
         @keyframes moveReindeer {
             from {
-                transform: translateX(100vw); /* Inizia fuori a destra */
+                transform: translateX(0);
             }
             to {
-                transform: translateX(-100vw); /* Esce fuori a sinistra */
+                transform: translateX(100vw);
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Background dell'albero -->
     <div class="background"></div>
-
-    <!-- GIF della renna animata -->
-    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="moving-reindeer">
-    
-    <!-- Testo della notifica -->
+    <img src="gif-renna-destra-sinistra.gif" alt="Renna animata" class="reindeer">
     <h1>Sito in fase di costruzione. Torna presto!</h1>
 
 </body>
