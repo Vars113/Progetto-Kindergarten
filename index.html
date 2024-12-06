@@ -17,24 +17,48 @@
             text-align: center;
         }
         .image-container img {
-            max-width: 50%; /* Limita la larghezza al 50% dello schermo */
-            height: auto; /* Mantiene le proporzioni dell'immagine */
-            opacity: 1; /* Aggiunge trasparenza */
+            max-width: 80%;
+            height: auto;
+            opacity: 0.9;
+            margin-bottom: 20px;
         }
         h1 {
             color: #333;
-            font-size: 2rem;
+            font-size: 2.5rem;
             background: transparent;
             padding: 20px;
             border-radius: 10px;
-            z-index: 1;
+        }
+        .gif-renna {
+            width: 200px; /* Puoi modificare le dimensioni della GIF */
+            position: absolute;
+            top: 80px; /* Posizione verticale della GIF */
+            animation: moveRenna 5s linear infinite;
+        }
+        @keyframes moveRenna {
+            0% {
+                transform: translateX(100vw); /* Inizia fuori dal lato destro */
+            }
+            100% {
+                transform: translateX(-100vw); /* Finisce fuori dal lato sinistro */
+            }
+        }
+        @media (max-width: 480px) {
+            .gif-renna {
+                width: 150px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="image-container">
-        <img src="albero-marzapane.png" alt="Albero di Natale di marzapane">
+        <img src="albero-marzapane.png" alt="Albero di Natale">
     </div>
     <h1>Sito in fase di costruzione. Buone feste!</h1>
+
+    <!-- GIF della renna -->
+    <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
+
 </body>
 </html>
