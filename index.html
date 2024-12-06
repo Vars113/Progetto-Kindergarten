@@ -13,22 +13,37 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f3f4f6;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Sfondo con dimensioni ridotte */
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%; /* Imposta la dimensione dell'immagine come percentuale della larghezza */
+            max-height: 60%; /* Impedisce che l'immagine sia troppo alta */
+            opacity: 0.5; /* Livello di trasparenza */
             background-image: url('albero-marzapane.png');
-            background-size: contain; /* Mostra l'immagine completa */
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
         }
         h1 {
+            position: relative; /* Sopra lo sfondo */
             color: #333;
             font-size: 2rem;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            z-index: 1; /* Priorità sopra lo sfondo */
         }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <h1>Sito in fase di costruzione. Torna presto!</h1>
 </body>
 </html>
