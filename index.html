@@ -174,19 +174,24 @@
             }
         }
 
-        // Mostra il menu su desktop e lo nasconde inizialmente su mobile
-        document.addEventListener('DOMContentLoaded', function () {
+        // Funzione per verificare e aggiornare la visibilità del menu
+        function updateMenuVisibility() {
             const navLinks = document.querySelector('.nav-links');
             const isMobile = window.innerWidth <= 768;
-            navLinks.style.display = isMobile ? 'none' : 'flex';
-        });
 
-        // Aggiusta la visibilità del menu durante il ridimensionamento della finestra
-        window.addEventListener('resize', function () {
-            const navLinks = document.querySelector('.nav-links');
-            const isMobile = window.innerWidth <= 768;
-            navLinks.style.display = isMobile ? 'none' : 'flex';
-        });
+            // Su mobile, nascondi il menu inizialmente
+            if (isMobile) {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex'; // Mostra il menu su desktop
+            }
+        }
+
+        // Chiamata iniziale per controllare la visibilità del menu
+        document.addEventListener('DOMContentLoaded', updateMenuVisibility);
+
+        // Aggiungi un ascoltatore per il ridimensionamento della finestra
+        window.addEventListener('resize', updateMenuVisibility);
     </script>
 
     <!-- Contenuti -->
