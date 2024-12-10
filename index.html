@@ -16,12 +16,55 @@
             background-color: #f3f4f6;
             text-align: center;
         }
+
+        /* Stile per il menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007BFF; /* Colore di evidenziazione al passaggio del mouse */
+        }
+
         .image-container img {
             max-width: 80%;
             height: auto;
             opacity: 0.9;
             margin-bottom: 20px;
         }
+
         h1 {
             color: #333;
             font-size: 2.5rem;
@@ -30,6 +73,7 @@
             border-radius: 10px;
             z-index: 1;
         }
+
         .gif-renna {
             width: 200px;
             position: absolute;
@@ -37,6 +81,7 @@
             z-index: 0;
             animation: moveRenna 5s linear infinite;
         }
+
         @keyframes moveRenna {
             0% {
                 transform: translateX(100vw); /* Inizia fuori dal lato destro */
@@ -45,6 +90,7 @@
                 transform: translateX(-100vw); /* Finisce fuori dal lato sinistro */
             }
         }
+
         @media (max-width: 480px) {
             .gif-renna {
                 width: 150px;
@@ -55,6 +101,17 @@
     </style>
 </head>
 <body>
+    <!-- Menu di navigazione -->
+    <div class="navbar">
+        <div class="logo">LOGO</div>
+        <ul class="nav-links">
+            <li><a href="#progetto">PROGETTO</a></li>
+            <li><a href="#struttura">STRUTTURA</a></li>
+            <li><a href="#investitori">INVESTITORI</a></li>
+            <li><a href="#lavora">LAVORA CON NOI</a></li>
+            <li><a href="#contatti">CONTATTI</a></li>
+        </ul>
+    </div>
 
     <div class="image-container">
         <img src="albero-marzapane.png" alt="Albero di Natale">
@@ -64,6 +121,5 @@
 
     <!-- GIF della renna -->
     <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
-
 </body>
 </html>
