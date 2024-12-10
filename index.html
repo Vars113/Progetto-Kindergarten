@@ -79,13 +79,13 @@
         }
 
         /* Stile per dispositivi mobili */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
 
             .nav-links {
-                display: none;
+                display: none; /* Nasconde il menu inizialmente */
                 flex-direction: column;
                 position: absolute;
                 top: 70px;
@@ -174,9 +174,18 @@
             }
         }
 
+        // Mostra il menu su desktop e lo nasconde inizialmente su mobile
         document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = 'none'; // Nasconde il menu a tendina al caricamento
+            const isMobile = window.innerWidth <= 768;
+            navLinks.style.display = isMobile ? 'none' : 'flex';
+        });
+
+        // Aggiusta la visibilità del menu durante il ridimensionamento della finestra
+        window.addEventListener('resize', function () {
+            const navLinks = document.querySelector('.nav-links');
+            const isMobile = window.innerWidth <= 768;
+            navLinks.style.display = isMobile ? 'none' : 'flex';
         });
     </script>
 
@@ -191,3 +200,4 @@
 
 </body>
 </html>
+
