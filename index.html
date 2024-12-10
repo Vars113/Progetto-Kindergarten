@@ -15,6 +15,7 @@
             font-family: Arial, sans-serif;
             background-color: #f3f4f6;
             text-align: center;
+            padding-top: 70px; /* Compensa l'altezza della navbar */
         }
 
         /* Navbar */
@@ -76,25 +77,11 @@
             color: #007BFF;
         }
 
-        .dropdown {
-            display: none;
-            flex-direction: column;
-            list-style: none;
-            padding: 0;
-        }
-
-        .dropdown li {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .dropdown a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .dropdown a:hover {
-            color: #007BFF;
+        .nav-links {
+            display: none; /* Nascondi di default */
+            flex-direction: column; /* Visualizza in colonna su mobile */
+            width: 100%;
+            align-items: center;
         }
 
         @media (max-width: 480px) {
@@ -104,18 +91,13 @@
             }
 
             .menu-toggle {
-                display: block;
+                display: block; /* Rendi visibile */
             }
 
-            .dropdown {
-                display: none;
-                width: 100%;
-                align-items: center;
+            .navbar .nav-links li {
+                margin: 5px 0;
             }
-
-            .nav-links {
-                display: none;
-            }
+        }
 
         /* Contenuti */
         .image-container img {
@@ -149,47 +131,17 @@
                 transform: translateX(-100vw);
             }
         }
-
-        @media (max-width: 480px) {
-            .navbar {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .navbar .logo {
-                margin-bottom: 10px;
-            }
-
-            .navbar .nav-links {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-
-            .navbar .nav-links li {
-                margin: 5px 0;
-            }
-
-            .navbar .logo img {
-                height: 40px;
-            }
-        }
     </style>
 </head>
 <body>
 
-     <!-- Navbar -->
+    <!-- Navbar -->
     <div class="navbar">
-        <!-- Logo e scritta KINDERGARTEN -->
         <div class="logo">
             <img src="Logo1.jpg" alt="Logo">
             <span>KINDERGARTEN</span>
         </div>
-
-        <!-- Icona hamburger per menu a tendina su mobile -->
         <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-
-        <!-- Menu principale -->
         <ul class="nav-links">
             <li><a href="#progetto">PROGETTO</a></li>
             <li><a href="#struttura">STRUTTURA</a></li>
@@ -201,14 +153,9 @@
 
     <script>
         function toggleMenu() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.style.display = 'none';  // Menu chiuso di default
-        });
     </script>
 
     <!-- Contenuti -->
@@ -218,7 +165,6 @@
 
     <h1>Sito in fase di costruzione.<br>Buone feste!</h1>
 
-    <!-- GIF della renna -->
     <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
 
 </body>
