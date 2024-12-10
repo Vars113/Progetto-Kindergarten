@@ -17,7 +17,7 @@
             background-color: #f3f4f6;
             text-align: center;
             padding-top: 70px; /* Compensa l'altezza della navbar */
-            overflow-x: hidden; /* Evita lo scroll orizzontale */
+            overflow-x: hidden;
         }
 
         /* Navbar */
@@ -28,7 +28,7 @@
             background-color: #fff;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between; /* Default su desktop */
             padding: 10px 20px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 100;
@@ -48,7 +48,6 @@
         .navbar .logo span {
             font-weight: bold;
             font-size: 1rem;
-            margin-left: 10px;
         }
 
         .menu-toggle {
@@ -60,7 +59,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            justify-content: center; /* Centra orizzontalmente le voci del menu */
+            justify-content: center; /* Centra orizzontalmente */
             align-items: center;
             padding: 0;
             margin: 0;
@@ -81,39 +80,12 @@
             color: #007BFF;
         }
 
-        /* Stile per dispositivi mobili */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 10px;
-                background-color: #fff;
-                padding: 10px;
-                border-radius: 5px;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-                width: 90%;
-                flex-direction: column;
-                justify-content: center; /* Centra voci su mobile */
-                align-items: center;
-            }
-
-            .nav-links li {
-                padding: 10px;
-                text-align: center;
-            }
-        }
-
         /* Contenuti */
         .image-container img {
             max-width: 80%;
             height: auto;
             opacity: 0.9;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -138,6 +110,48 @@
             }
             100% {
                 transform: translateX(-100vw);
+            }
+        }
+
+        /* Stile per dispositivi mobili */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: center; /* Centra orizzontalmente su mobile */
+            }
+
+            .logo {
+                margin-right: 15px; /* Spazio tra "KINDERGARTEN" e il menu a tendina */
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 10px;
+                background-color: #fff;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-links li {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .image-container img {
+                max-width: 90%;
+                margin-top: 10px; /* Sposta l'albero più vicino alla navbar su mobile */
             }
         }
 
@@ -168,17 +182,20 @@
         </ul>
     </div>
 
-    <!-- Script per la navbar -->
+    <!-- Contenuti -->
+    <div class="image-container">
+        <img src="albero-marzapane.png" alt="Albero di Natale">
+    </div>
+
+    <h1>Sito in fase di costruzione.<br>Buone feste!</h1>
+
+    <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
+
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             const isMenuVisible = navLinks.style.display === 'flex';
             navLinks.style.display = isMenuVisible ? 'none' : 'flex';
-
-            if (!isMenuVisible) {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.alignItems = 'center';
-            }
         }
 
         function updateMenuVisibility() {
@@ -195,15 +212,5 @@
         document.addEventListener('DOMContentLoaded', updateMenuVisibility);
         window.addEventListener('resize', updateMenuVisibility);
     </script>
-
-    <!-- Contenuti -->
-    <div class="image-container">
-        <img src="albero-marzapane.png" alt="Albero di Natale">
-    </div>
-
-    <h1>Sito in fase di costruzione.<br>Buone feste!</h1>
-
-    <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
 </body>
-
 </html>
