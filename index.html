@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In fase di costruzione</title>
+
     <style>
         body {
             display: flex;
@@ -27,7 +28,7 @@
             background-color: #fff;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Centra orizzontalmente */
             padding: 10px 20px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 100;
@@ -59,8 +60,10 @@
         .nav-links {
             list-style: none;
             display: flex;
-            margin: 0;
+            justify-content: center; /* Centra orizzontalmente le voci del menu */
+            align-items: center;
             padding: 0;
+            margin: 0;
         }
 
         .nav-links li {
@@ -85,21 +88,23 @@
             }
 
             .nav-links {
-                display: none; /* Nasconde il menu inizialmente */
-                flex-direction: column;
+                display: none;
                 position: absolute;
                 top: 70px;
                 right: 10px;
                 background-color: #fff;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
                 padding: 10px;
                 border-radius: 5px;
-                z-index: 1000;
-                width: calc(100% - 20px); /* Adattamento alla larghezza */
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                flex-direction: column;
+                justify-content: center; /* Centra voci su mobile */
+                align-items: center;
             }
 
             .nav-links li {
-                margin: 5px 0;
+                padding: 10px;
+                text-align: center;
             }
         }
 
@@ -117,34 +122,34 @@
             background: transparent;
             padding: 20px;
             border-radius: 10px;
-            z-index: 1;
         }
 
         .gif-renna {
             width: 200px;
             position: absolute;
-            bottom: 10px; /* Posizione verticale per desktop */
+            bottom: 10px;
             z-index: 0;
             animation: moveRenna 5s linear infinite;
         }
 
         @keyframes moveRenna {
             0% {
-                transform: translateX(100vw); /* Inizia fuori dal lato destro */
+                transform: translateX(100vw);
             }
             100% {
-                transform: translateX(-100vw); /* Finisce fuori dal lato sinistro */
+                transform: translateX(-100vw);
             }
         }
 
         @media (max-width: 480px) {
             .gif-renna {
                 width: 150px;
-                bottom: -20px; /* Sposta la renna più in basso */
+                bottom: -20px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -163,6 +168,7 @@
         </ul>
     </div>
 
+    <!-- Script per la navbar -->
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -170,27 +176,23 @@
             navLinks.style.display = isMenuVisible ? 'none' : 'flex';
 
             if (!isMenuVisible) {
-                navLinks.style.flexDirection = 'column'; // Assicura disposizione verticale
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.alignItems = 'center';
             }
         }
 
-        // Funzione per verificare e aggiornare la visibilità del menu
         function updateMenuVisibility() {
             const navLinks = document.querySelector('.nav-links');
             const isMobile = window.innerWidth <= 768;
 
-            // Su mobile, nascondi il menu inizialmente
             if (isMobile) {
                 navLinks.style.display = 'none';
             } else {
-                navLinks.style.display = 'flex'; // Mostra il menu su desktop
+                navLinks.style.display = 'flex';
             }
         }
 
-        // Chiamata iniziale per controllare la visibilità del menu
         document.addEventListener('DOMContentLoaded', updateMenuVisibility);
-
-        // Aggiungi un ascoltatore per il ridimensionamento della finestra
         window.addEventListener('resize', updateMenuVisibility);
     </script>
 
@@ -202,7 +204,6 @@
     <h1>Sito in fase di costruzione.<br>Buone feste!</h1>
 
     <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
-
 </body>
-</html>
 
+</html>
