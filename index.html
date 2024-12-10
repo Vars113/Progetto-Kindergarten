@@ -48,6 +48,12 @@
             margin-left: 10px;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         .navbar .nav-links {
             list-style: none;
             display: flex;
@@ -70,19 +76,11 @@
             color: #007BFF;
         }
 
-        /* Menu a tendina (Mobile) */
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
         .dropdown {
             display: none;
             flex-direction: column;
             list-style: none;
             padding: 0;
-            width: 100%;
         }
 
         .dropdown li {
@@ -105,23 +103,18 @@
                 padding: 10px;
             }
 
-            .navbar .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-
-            .navbar .logo {
-                margin-bottom: 10px;
-            }
-
             .menu-toggle {
                 display: block;
             }
 
             .dropdown {
-                display: flex;
+                display: none;
+                width: 100%;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
             }
         }
     </style>
@@ -148,7 +141,7 @@
             <li><a href="#contatti">CONTATTI</a></li>
         </ul>
 
-        <!-- Menu a tendina visibile solo su mobile -->
+        <!-- Menu a tendina visibile su mobile -->
         <ul class="dropdown">
             <li><a href="#progetto">PROGETTO</a></li>
             <li><a href="#struttura">STRUTTURA</a></li>
@@ -163,8 +156,12 @@
             const dropdown = document.querySelector('.dropdown');
             dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = 'none';  // Menu chiuso di default
+        });
     </script>
 
 </body>
 </html>
-
