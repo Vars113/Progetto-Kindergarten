@@ -82,11 +82,10 @@
             .navbar {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 10px;
             }
 
             .menu-toggle {
-                display: block; /* Rendi visibile */
+                display: block; /* Mostra l'icona hamburger */
             }
 
             .nav-links {
@@ -106,7 +105,9 @@
                 margin: 5px 0;
             }
         }
-                .image-container img {
+
+        /* Contenuti */
+        .image-container img {
             max-width: 80%;
             height: auto;
             opacity: 0.9;
@@ -169,8 +170,14 @@
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            const isMenuVisible = navLinks.style.display === 'flex';
+            navLinks.style.display = isMenuVisible ? 'none' : 'flex';
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = 'none'; // Nasconde il menu a tendina al caricamento
+        });
     </script>
 
     <!-- Contenuti -->
