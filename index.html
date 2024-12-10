@@ -3,6 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu con navigazione</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Stile del menu */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px; /* Altezza logo */
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d01c1f; /* Colore rosso del testo */
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .navbar .menu a:hover {
+            color: #d01c1f; /* Cambia colore al passaggio del mouse */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Dexis Logo">
+            <span>DEXIS</span>
+        </div>
+        <div class="menu">
+            <a href="#progetto">PROGETTO</a>
+            <a href="#asilo">ASILO</a>
+            <a href="#investitori">INVESTITORI</a>
+            <a href="#lavora-con-noi">LAVORA CON NOI</a>
+            <a href="#contatti">CONTATTI</a>
+        </div>
+    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In fase di costruzione</title>
     <style>
         body {
