@@ -42,6 +42,12 @@
             width: auto;
         }
 
+        .navbar .logo span {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+
         .navbar .nav-links {
             list-style: none;
             display: flex;
@@ -64,37 +70,33 @@
             color: #007BFF;
         }
 
-        /* Contenuti */
-        .image-container img {
-            max-width: 80%;
-            height: auto;
-            opacity: 0.9;
-            margin-bottom: 20px;
+        /* Menu a tendina (Mobile) */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
         }
 
-        h1 {
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .dropdown li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dropdown a {
+            text-decoration: none;
             color: #333;
-            font-size: 2.5rem;
-            background: transparent;
-            padding: 20px;
-            border-radius: 10px;
         }
 
-        .gif-renna {
-            width: 200px;
-            position: absolute;
-            bottom: 0px;
-            z-index: 0;
-            animation: moveRenna 5s linear infinite;
-        }
-
-        @keyframes moveRenna {
-            0% {
-                transform: translateX(100vw);
-            }
-            100% {
-                transform: translateX(-100vw);
-            }
+        .dropdown a:hover {
+            color: #007BFF;
         }
 
         @media (max-width: 480px) {
@@ -103,22 +105,23 @@
                 padding: 10px;
             }
 
-            .navbar .logo {
-                margin-bottom: 10px;
-            }
-
             .navbar .nav-links {
+                display: none;
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
             }
 
-            .navbar .nav-links li {
-                margin: 5px 0;
+            .navbar .logo {
+                margin-bottom: 10px;
             }
 
-            .navbar .logo img {
-                height: 40px;
+            .menu-toggle {
+                display: block;
+            }
+
+            .dropdown {
+                display: flex;
             }
         }
     </style>
@@ -127,13 +130,26 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        <!-- Logo come immagine -->
+        <!-- Logo e scritta KINDERGARTEN -->
         <div class="logo">
             <img src="Logo1.jpg" alt="Logo">
+            <span>KINDERGARTEN</span>
         </div>
 
-        <!-- Menu di navigazione -->
+        <!-- Icona hamburger per menu a tendina su mobile -->
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+
+        <!-- Menu principale -->
         <ul class="nav-links">
+            <li><a href="#progetto">PROGETTO</a></li>
+            <li><a href="#struttura">STRUTTURA</a></li>
+            <li><a href="#investitori">INVESTITORI</a></li>
+            <li><a href="#lavora">LAVORA CON NOI</a></li>
+            <li><a href="#contatti">CONTATTI</a></li>
+        </ul>
+
+        <!-- Menu a tendina visibile solo su mobile -->
+        <ul class="dropdown">
             <li><a href="#progetto">PROGETTO</a></li>
             <li><a href="#struttura">STRUTTURA</a></li>
             <li><a href="#investitori">INVESTITORI</a></li>
@@ -142,15 +158,12 @@
         </ul>
     </div>
 
-    <!-- Contenuti -->
-    <div class="image-container">
-        <img src="albero-marzapane.png" alt="Albero di Natale">
-    </div>
-
-    <h1>Sito in fase di costruzione.<br>Buone feste!</h1>
-
-    <!-- GIF della renna -->
-    <img class="gif-renna" src="gif-renna-destra-sinistra.gif" alt="Renna animata">
+    <script>
+        function toggleMenu() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 
 </body>
 </html>
