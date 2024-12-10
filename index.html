@@ -16,6 +16,7 @@
             background-color: #f3f4f6;
             text-align: center;
             padding-top: 70px; /* Compensa l'altezza della navbar */
+            overflow-x: hidden; /* Previene lo scorrimento orizzontale su mobile */
         }
 
         /* Navbar */
@@ -126,7 +127,7 @@
         .gif-renna {
             width: 200px;
             position: absolute;
-            bottom: 0px; /* Posizione verticale sotto la scritta e l'albero */
+            bottom: 20px; /* Posizione verticale per desktop */
             z-index: 0;
             animation: moveRenna 5s linear infinite;
         }
@@ -144,7 +145,7 @@
             .gif-renna {
                 width: 150px;
                 animation: moveRenna 3s linear infinite; /* Animazione più veloce sui dispositivi mobili */
-                bottom: 0px; /* Aumentato spazio tra la renna e il testo */
+                bottom: 10px; /* Sposta la renna più in basso */
             }
         }
     </style>
@@ -191,3 +192,4 @@
 
 </body>
 </html>
+
