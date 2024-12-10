@@ -106,6 +106,46 @@
                 margin: 5px 0;
             }
         }
+                .image-container img {
+            max-width: 80%;
+            height: auto;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .gif-renna {
+            width: 200px;
+            position: absolute;
+            bottom: 0px; /* Posizione verticale sotto la scritta e l'albero */
+            z-index: 0;
+            animation: moveRenna 5s linear infinite;
+        }
+
+        @keyframes moveRenna {
+            0% {
+                transform: translateX(100vw); /* Inizia fuori dal lato destro */
+            }
+            100% {
+                transform: translateX(-100vw); /* Finisce fuori dal lato sinistro */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gif-renna {
+                width: 150px;
+                animation: moveRenna 3s linear infinite; /* Animazione più veloce sui dispositivi mobili */
+                bottom: 0px; /* Aumentato spazio tra la renna e il testo */
+            }
+        }
     </style>
 </head>
 <body>
